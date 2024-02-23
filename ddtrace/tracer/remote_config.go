@@ -79,7 +79,7 @@ func (t *tags) toMap() *map[string]interface{} {
 func (t *tracer) dynamicInstrumentationRCUpdate(u remoteconfig.ProductUpdate) map[string]state.ApplyStatus {
 
 	for k, v := range u {
-		log.Info("rc configuration for %s:\n\t%s\n", k, v)
+		log.Debug("received rc configuration for: %s\n", k)
 		passFullConfiguration(k, string(v))
 	}
 
